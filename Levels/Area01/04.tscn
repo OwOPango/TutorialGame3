@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://ox2kjtyer5h0"]
+[gd_scene load_steps=6 format=4 uid="uid://ox2kjtyer5h0"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/level.gd" id="1_12k4g"]
-[ext_resource type="Texture2D" uid="uid://p0jf2rblew8i" path="res://Tile Maps/Sprites/grass_tiles.png" id="2_uknpj"]
 [ext_resource type="Script" path="res://Tile Maps/LevelTileMap.gd" id="3_hn8oc"]
 [ext_resource type="PackedScene" uid="uid://csathxcayu5uv" path="res://Levels/player_spawn.tscn" id="4_hwxr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p75l"]
-texture = ExtResource("2_uknpj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
