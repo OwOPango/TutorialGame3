@@ -14,6 +14,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAAAAAIAAQAAAAI
 [node name="LevelTransition" parent="." instance=ExtResource("3_xmhcc")]
 position = Vector2(304, 0)
 level = "res://Levels/Area01/01.tscn"
+target_transition_area = "LevelTransition2"
 size = 3
 side = 2
 
