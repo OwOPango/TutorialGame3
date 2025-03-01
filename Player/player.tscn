@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://brm6k3ex6a36m"]
+[gd_scene load_steps=18 format=3 uid="uid://brm6k3ex6a36m"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_8t1jc"]
 [ext_resource type="Texture2D" uid="uid://du1pld1k40oq8" path="res://Player/Sprites/mc_sprite_sheet.png" id="2_tm1ye"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/Scripts/state_walk.gd" id="4_xwi4u"]
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="5_lnw00"]
 [ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="6_pk0q6"]
+[ext_resource type="Script" path="res://Player/Scripts/player_interactions_host.gd" id="7_6qblo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujrl7"]
 radius = 8.0
@@ -74,7 +75,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4, 6, 7, 7]
+"values": [4, 5, 6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_22qah"]
@@ -139,6 +140,9 @@ _data = {
 "walk_up": SubResource("Animation_tgjmj")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esoda"]
+size = Vector2(10, 9)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
 motion_mode = 1
@@ -171,3 +175,16 @@ script = ExtResource("5_lnw00")
 [node name="Camera2D" type="Camera2D" parent="."]
 editor_draw_limits = true
 script = ExtResource("6_pk0q6")
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("7_6qblo")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+position = Vector2(0, 14.5)
+shape = SubResource("RectangleShape2D_esoda")
+debug_color = Color(0, 0.88747, 0.570202, 0.42)

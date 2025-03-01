@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://diysfuxx2vwqt"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_oqap6"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="2_dbevk"]
+[ext_resource type="AudioStream" uid="uid://d13el6ov1rhay" path="res://Items/item_pickup/hp-up.wav" id="3_o3xt0"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="4_vf4md"]
+[ext_resource type="Texture2D" uid="uid://ck0wptx8hplq7" path="res://Items/Sprites/big_greasy_turkey_leg.png" id="5_e3lbe"]
+
+[sub_resource type="Resource" id="Resource_18vd0"]
+script = ExtResource("2_dbevk")
+heal_amount = 1
+audio = ExtResource("3_o3xt0")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxuw2"]
+atlas = ExtResource("5_e3lbe")
+
+[resource]
+script = ExtResource("4_vf4md")
+name = ""
+description = "A shiny brown leg."
+texture = SubResource("AtlasTexture_bxuw2")
+effects = Array[ExtResource("1_oqap6")]([SubResource("Resource_18vd0")])

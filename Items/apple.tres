@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=7 format=3 uid="uid://dt61x4r4g0jo"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_d7i8r"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="2_5v1x2"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="2_mvqj1"]
+[ext_resource type="Texture2D" uid="uid://dx7do8kxrjvsl" path="res://Items/Sprites/items.png" id="4_6ed2n"]
+
+[sub_resource type="Resource" id="Resource_fsf1b"]
+script = ExtResource("2_5v1x2")
+heal_amount = 1
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkfeb"]
+atlas = ExtResource("4_6ed2n")
+region = Rect2(192, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_mvqj1")
+name = ""
+description = "A shiny red fruit."
+texture = SubResource("AtlasTexture_rkfeb")
+effects = Array[ExtResource("1_d7i8r")]([SubResource("Resource_fsf1b")])
