@@ -5,6 +5,10 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 var direction : Vector2 = Vector2.ZERO
 
+
+signal direction_changed( new_direction: Vector2 )
+
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
