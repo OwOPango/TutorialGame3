@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://dmk8gc4ydy3y5"]
+
+[ext_resource type="Script" path="res://NPC/scripts/npc_resource.gd" id="1_4afpm"]
+[ext_resource type="Texture2D" uid="uid://ckx44xhimauw0" path="res://NPC/sprites/Red_Bunny_Petland_Puppy-removebg-preview.png" id="2_xp54p"]
+
+[resource]
+script = ExtResource("1_4afpm")
+npc_name = "Bunny2"
+sprite = ExtResource("2_xp54p")
+portrait = ExtResource("2_xp54p")
+dialog_audio_pitch = ""

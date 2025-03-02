@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5rrrw8c4gnrm"]
+
+[ext_resource type="Script" path="res://NPC/scripts/npc.gd" id="1_v8che"]
+[ext_resource type="Texture2D" uid="uid://jqxt0wt6pu8n" path="res://NPC/sprites/rabbit-removebg-preview.png" id="2_e1mfx"]
+
+[sub_resource type="Animation" id="Animation_1clby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_epdst"]
+resource_name = "idle_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_hytwn"]
+resource_name = "idle_side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_cs755"]
+resource_name = "idle_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_x3evq"]
+resource_name = "walk_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_yoslv"]
+resource_name = "walk_side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="Animation" id="Animation_v0gqb"]
+resource_name = "walk_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_e1mfx")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_neth4"]
+_data = {
+"RESET": SubResource("Animation_1clby"),
+"idle_down": SubResource("Animation_epdst"),
+"idle_side": SubResource("Animation_hytwn"),
+"idle_up": SubResource("Animation_cs755"),
+"walk_down": SubResource("Animation_x3evq"),
+"walk_side": SubResource("Animation_yoslv"),
+"walk_up": SubResource("Animation_v0gqb")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i5j8m"]
+height = 58.0
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_v8che")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_e1mfx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_neth4")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i5j8m")

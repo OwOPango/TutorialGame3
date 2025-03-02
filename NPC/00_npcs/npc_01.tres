@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://bwgduu5k7wutl"]
+
+[ext_resource type="Script" path="res://NPC/scripts/npc_resource.gd" id="1_643q1"]
+[ext_resource type="Texture2D" uid="uid://jqxt0wt6pu8n" path="res://NPC/sprites/rabbit-removebg-preview.png" id="2_66pq4"]
+
+[resource]
+script = ExtResource("1_643q1")
+npc_name = "Bunny"
+sprite = ExtResource("2_66pq4")
+dialog_audio_pitch = ""

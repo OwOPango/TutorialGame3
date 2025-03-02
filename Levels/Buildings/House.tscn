@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4u1f5rp1jmp2"]
+
+[ext_resource type="Texture2D" uid="uid://dgc5kictkylt6" path="res://Levels/Buildings/Sprites/logcabin-removebg-preview.png" id="1_cxmok"]
+
+[node name="House" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_cxmok")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-69, 5, -28, -27, 39, -27, 67, 2, 63, 10, 60, 9, 61, 54, 9, 61, -12, 59, -11, 23, -33, 22, -34, 58, -59, 56, -58, 13, -64, 17)
