@@ -8,6 +8,7 @@ texture = ExtResource("1_fp40b")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
+1:0/0/probability = 0.25
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0

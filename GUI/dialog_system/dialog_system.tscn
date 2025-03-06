@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsx3ax1rg2uv1"]
+[gd_scene load_steps=15 format=3 uid="uid://bsx3ax1rg2uv1"]
 
 [ext_resource type="Script" path="res://GUI/dialog_system/scripts/dialog_system.gd" id="1_2jhaw"]
 [ext_resource type="Texture2D" uid="uid://hhujl0o26yaq" path="res://GUI/dialog_system/sprites/text-bubble.png" id="2_v0qwh"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://qbcw6py6f4yq" path="res://GUI/fonts/Abaddon Bold.ttf" id="4_6y4p7"]
 [ext_resource type="Texture2D" uid="uid://jqxt0wt6pu8n" path="res://NPC/sprites/rabbit-removebg-preview.png" id="5_1xhp4"]
 [ext_resource type="FontFile" uid="uid://dq6wwy7rmto2b" path="res://GUI/fonts/m5x7.ttf" id="6_3bldr"]
+[ext_resource type="AudioStream" uid="uid://cvm8lkjyr5sus" path="res://GUI/dialog_system/audio/voice_blip.wav" id="7_thwap"]
 
 [sub_resource type="Gradient" id="Gradient_ls5oj"]
 offsets = PackedFloat32Array(0, 0.00598802, 0.0299401, 1)
@@ -38,6 +39,21 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="Animation" id="Animation_pale1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_hrpd2"]
 resource_name = "default"
 loop_mode = 1
@@ -52,21 +68,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1.2, 1.4, 1.4, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_pale1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ibn26"]
@@ -124,6 +125,8 @@ bbcode_enabled = true
 text = "EXAMPLE  [b]TEXT[/b]
 TEXT
 TEXT"
+visible_characters = 1
+visible_ratio = 0.0869565
 
 [node name="PortraitSprite" type="Sprite2D" parent="DialogUI"]
 position = Vector2(46, 221)
@@ -131,6 +134,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_1xhp4")
 
 [node name="Timer" type="Timer" parent="DialogUI"]
+one_shot = true
 
 [node name="DialogProgress" type="PanelContainer" parent="DialogUI"]
 layout_mode = 0
@@ -154,3 +158,7 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_ibn26")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="DialogUI"]
+stream = ExtResource("7_thwap")
+max_polyphony = 6

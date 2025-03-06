@@ -144,13 +144,14 @@ _data = {
 size = Vector2(16, 9)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.174533
 script = ExtResource("1_8t1jc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 14)
+position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_ujrl7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -185,6 +186,6 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
-position = Vector2(0, 14.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_esoda")
 debug_color = Color(0, 0.88747, 0.570202, 0.42)

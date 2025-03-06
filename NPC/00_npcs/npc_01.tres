@@ -7,4 +7,5 @@
 script = ExtResource("1_643q1")
 npc_name = "Bunny"
 sprite = ExtResource("2_66pq4")
+portrait = ExtResource("2_66pq4")
 dialog_audio_pitch = ""
