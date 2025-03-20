@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7mro4x5v3ryo"]
+
+[ext_resource type="Texture2D" uid="uid://hhujl0o26yaq" path="res://GUI/dialog_system/sprites/text-bubble.png" id="1_yqrow"]
+
+[node name="WindowDefault" type="NinePatchRect"]
+size_flags_horizontal = 3
+texture = ExtResource("1_yqrow")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4

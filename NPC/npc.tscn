@@ -1,7 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://r4ryhy7c41vy"]
+[gd_scene load_steps=13 format=3 uid="uid://r4ryhy7c41vy"]
 
 [ext_resource type="Script" path="res://NPC/scripts/npc.gd" id="1_ts5i6"]
-[ext_resource type="Texture2D" uid="uid://jqxt0wt6pu8n" path="res://NPC/sprites/rabbit-removebg-preview.png" id="2_kliri"]
+[ext_resource type="Texture2D" uid="uid://b07iom0th7h1h" path="res://NPC/sprites/BunnyIdleB.png" id="2_dg2jp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryp3o"]
+atlas = ExtResource("2_dg2jp")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Animation" id="Animation_p4wbr"]
 length = 0.001
@@ -126,6 +130,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjmim"]
+radius = 6.0
 
 [node name="NPC" type="CharacterBody2D"]
 collision_layer = 16
@@ -133,9 +138,8 @@ collision_mask = 16
 script = ExtResource("1_ts5i6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -39)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_kliri")
+position = Vector2(0, -15)
+texture = SubResource("AtlasTexture_ryp3o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -143,5 +147,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_hjmim")

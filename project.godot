@@ -32,6 +32,11 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom="res://Battle/GUI/default_theme.tres"
+theme/custom_font="res://GUI/fonts/Abaddon Bold.ttf"
+
 [input]
 
 up={

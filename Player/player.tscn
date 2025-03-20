@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brm6k3ex6a36m"]
+[gd_scene load_steps=19 format=3 uid="uid://brm6k3ex6a36m"]
 
 [ext_resource type="Script" path="res://Player/Scripts/player.gd" id="1_8t1jc"]
 [ext_resource type="Texture2D" uid="uid://du1pld1k40oq8" path="res://Player/Sprites/mc_sprite_sheet.png" id="2_tm1ye"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Player/Scripts/state_idle.gd" id="5_lnw00"]
 [ext_resource type="Script" path="res://Player/Scripts/player_camera.gd" id="6_pk0q6"]
 [ext_resource type="Script" path="res://Player/Scripts/player_interactions_host.gd" id="7_6qblo"]
+[ext_resource type="Script" path="res://Player/Scripts/push_area.gd" id="8_qbhyt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ujrl7"]
 radius = 5.0
@@ -141,7 +142,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esoda"]
-size = Vector2(16, 9)
+size = Vector2(12, 12)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -189,3 +190,14 @@ monitoring = false
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_esoda")
 debug_color = Color(0, 0.88747, 0.570202, 0.42)
+
+[node name="PushArea" type="Area2D" parent="Interactions"]
+collision_layer = 0
+collision_mask = 16
+monitorable = false
+script = ExtResource("8_qbhyt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/PushArea"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_esoda")
+debug_color = Color(0.880537, 0, 0.88747, 0.42)

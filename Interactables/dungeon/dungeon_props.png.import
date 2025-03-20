@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gov56ktpgk5j"
-path="res://.godot/imported/treeshadow.png-c0412ad103ed11370cc2d6443cb08f75.ctex"
+uid="uid://bej4rvw4kqi05"
+path="res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/Sprites/treeshadow.png"
-dest_files=["res://.godot/imported/treeshadow.png-c0412ad103ed11370cc2d6443cb08f75.ctex"]
+source_file="res://Interactables/dungeon/dungeon_props.png"
+dest_files=["res://.godot/imported/dungeon_props.png-efac48749301c019019c6b8d3f2e2326.ctex"]
 
 [params]
 
