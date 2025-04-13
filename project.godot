@@ -23,6 +23,7 @@ SceneTransition="*res://GUI/SceneTransition/SceneTransition.tscn"
 SaveManager="*res://00_Globals/global_save_manager.gd"
 PauseMenu="*res://GUI/PauseMenu/PauseMenu.tscn"
 DialogSystem="*res://GUI/dialog_system/dialog_system.tscn"
+Debug="*res://Battle/debug.gd"
 
 [display]
 
